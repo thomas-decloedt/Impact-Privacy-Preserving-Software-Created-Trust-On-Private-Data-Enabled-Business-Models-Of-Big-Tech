@@ -1,0 +1,112 @@
+\documentclass[oneside,twocolumn]{article}
+
+
+% packages
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage[english]{babel}
+\usepackage[parfill]{parskip}
+\usepackage[pdftex]{graphicx}
+\usepackage[
+    sorting=none,
+]{biblatex}
+\usepackage{dirtytalk}
+\usepackage{enumitem}
+\usepackage[
+    colorlinks = true,
+    linkcolor = red,
+    citecolor = green,
+    urlcolor = blue,
+]{hyperref}
+\usepackage{lipsum}
+\usepackage{scrlayer}
+\usepackage{url}
+\usepackage[
+    nopostdot,
+    style=super,
+    nonumberlist,
+    toc
+]{glossaries}
+\glsdisablehyper
+% resources
+\addbibresource{references.bib}
+\graphicspath{{./images/}}
+
+% commands, formatting, settings
+
+\AtEveryBibitem{%
+    \clearfield{note}%
+}
+
+\sloppy % for citations use numbers instead of full reference
+
+\renewcommand\theadfont{\bfseries}
+
+% chapter headers: "<number> name" instead of "chapter [number] \n name"
+\makeatletter
+\def\@makechapterhead#1{%
+    \vspace*{-30\p@} % spacing before title
+    {
+        \parindent \z@ \raggedright \normalfont
+        \interlinepenalty\@M
+        \Huge\bfseries  \thechapter.\quad #1\par\nobreak
+        \vskip 20\p@ % spacing after title
+    }
+}
+\makeatother
+
+%%%%
+
+\makeindex
+
+\author{%
+    Decloedt, Thomas\\
+    \texttt{thomas.decloedt@ugent.be}
+    \and
+    De Bock, Jens\\
+    \texttt{jensdboc.debock@ugent.be}
+    \and
+    Voet, Ysabeau\\
+    \texttt{ysabeau.voet@ugent.be}
+}
+
+\title{%
+    \begin{Huge}
+        Research Project\\
+    \end{Huge}
+    \begin{small}
+        Impact of privacy-preserving-software-created trust on private-data-enabled business models of Big Tech
+    \end{small}
+}
+
+
+
+\makeglossaries
+\loadglsentries{acronyms.tex}
+
+\begin{document}
+
+    \input{title.tex}
+    \newpage
+    \hypersetup{linkcolor = black}
+    \onecolumn
+    \newpage
+    \twocolumn
+    
+    \clearpage
+    \pagenumbering{arabic} 
+    
+    \input{abstract.tex}
+    \input{introduction.tex}
+    \input{the-role-of-data-for-big-tech.tex}
+    \input{types-of-methods.tex}
+    \input{ddbm.tex}
+    \input{conclusion.tex}
+    \input{acknowledgement.tex}
+
+    \glsaddall
+    \nocite{*} % show all entries 
+    
+    \printbibliography
+    
+\end{document}

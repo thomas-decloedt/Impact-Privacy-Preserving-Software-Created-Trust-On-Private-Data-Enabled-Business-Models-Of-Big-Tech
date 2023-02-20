@@ -1,0 +1,12 @@
+\DeclareNewLayer[
+  foreground,
+  foot,
+  contents={\parbox[b][\layerheight][b]{\layerwidth}{%
+    \includegraphics[width=5cm]{figures/logo-ugent.png}\hfill\includegraphics[width=7cm]{figures/logo-fea.png}%
+  }}
+]{titlepage.logos}
+
+\AddLayersToPageStyle{empty}{titlepage.logos}
+\maketitle
+\RemoveLayersFromPageStyle{empty}{titlepage.logos}
+\thispagestyle{empty}
