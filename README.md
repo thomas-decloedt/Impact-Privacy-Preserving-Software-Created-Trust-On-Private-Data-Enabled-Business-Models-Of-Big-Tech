@@ -1,4 +1,4 @@
-# Impact Of Privacy Preserving Software Created Trust On Private Data Enabled Business Models Of Big Tech
+# Impact Of Privacy-Preserving-Software-Created Trust On Private-Data-Enabled Business Models Of Big Tech
 
 This survey paper was written by three masters students in computer science engineering of Ghent University: Jens De Bock, Thomas Decloedt & Ysabeau Voet.
 They do not conduct any research themselves.
